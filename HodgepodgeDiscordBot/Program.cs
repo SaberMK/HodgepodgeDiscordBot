@@ -22,6 +22,7 @@ namespace HodgepodgeDiscordBot
         private async Task StartAsync()
         {
             Task.Run(Wakeuper.WakeUp);
+            Console.WriteLine("After Wakeuper.WakeUp()");
             using (var services = ConfigureServices())
             {
                 // get the client and assign to client 
@@ -33,6 +34,7 @@ namespace HodgepodgeDiscordBot
                 client.Log += LogAsync;
                 client.Ready += ReadyAsync;
 
+                Console.WriteLine("Before bot started");
                 // this is where we get the Token value from the configuration file, and start the bot
                 await client.LoginAsync(TokenType.Bot, new MainConfigIterractor().Config.Token);
                 await client.StartAsync();
