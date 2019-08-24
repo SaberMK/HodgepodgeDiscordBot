@@ -17,4 +17,5 @@ ENV cmdPrefix=
 # RUN ls -la 
 # RUN pwd
 COPY --from=build-env /HodgepodgeDiscordBot/out .
-ENTRYPOINT ["dotnet", "HodgepodgeDiscordBot.dll"]
+# ENTRYPOINT ["dotnet", "HodgepodgeDiscordBot.dll"]
+CMD ["dotnet HodgepodgeDiscordBot.dll"]
