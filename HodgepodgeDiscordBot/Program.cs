@@ -1,6 +1,7 @@
 ﻿using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using HodgepodgeDiscordBot.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace HodgepodgeDiscordBot
 
         private async Task StartAsync()
         {
-            
+            Task.Run(Wakeuper.WakeUp);
             using (var services = ConfigureServices())
             {
                 // get the client and assign to client 
