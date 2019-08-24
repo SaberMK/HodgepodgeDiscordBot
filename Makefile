@@ -12,10 +12,6 @@ build:
 	docker build \
 		-t $(DOCKER_REPO_IMAGE_NAME) .
 
-# push release docker image
-docker-push-master:
-	docker push $(DOCKER_REPO_IMAGE_NAME)
-
 # push release docker image to heroku
 docker-push-heroku:
 	docker tag $(DOCKER_REPO_IMAGE_NAME) $(HEROKU_DOCKER_IMAGE_TAG)

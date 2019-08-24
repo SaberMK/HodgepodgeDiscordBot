@@ -21,8 +21,7 @@ deploy:
     script:
       # push docker image to hub, heroku
       # webhook - update the docker image metadata
-      make docker-push-master;
       make docker-push-heroku;
-      heroku container:release web
+      heroku container:release web --app $HEROKU_APP_NAME
     on:
       branch: master
